@@ -1,15 +1,19 @@
-pipeline{
+pipeline {
  agent any
- stages {
-  stage ('Compile Stage') {
   
+ stages {
+  
+  
+  stage ('Compile Stage') {  
   steps {
   withMaven(maven : 'maven_3_5_0') {
      sh 'mvn clean compile'
   }
   }
   }
-  stage ('Testing Stage') {
+  
+  
+/* stage ('Testing Stage') {
   
   steps {
   withMaven(maven : 'maven_3_5_0') {
@@ -25,7 +29,7 @@ pipeline{
      sh 'mvn deploy'
   }
   }
-  }
+  }  */
  
 
  }
